@@ -1,0 +1,56 @@
+.header {
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin: 0 auto;    /*pra alinhar ao centro*/
+    display: flex;   /*pra cada um ficar ao lado do outro*/
+    justify-content: space-between;  /*um de cada lado*/
+    align-items: center;
+}
+
+.header h1 {
+    position: relative;
+    
+}
+.header h1::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../img/detalhe.svg') no-repeat center;
+    position: absolute;
+    border-radius: 50%;
+    left: 1.6rem;
+    top: 0.5rem;
+    z-index: -1;
+}
+
+
+.header-menu {
+    display: flex;
+    flex-wrap: wrap;  /*para quando diminuir um pra debaixo do outro */
+    gap: 10px;
+    justify-content: center;
+}
+
+.header-menu a {
+    font-size: 1.125rem;
+    line-height: 1.3rem;
+    padding: 10px 25px;  /* pra aumentar a area de contato*/
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--bg-primary);
+    display: block;
+}
+
+@media (max-width: 800px) {
+    .header {
+        flex-direction: column;       /* um acima do outro*/
+        gap: 40px;
+        padding: 20px;
+    }
+    .header a {
+        background: var(--nav-primary) ;
+        border-radius: 4px;
+    }
+}
+
